@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eidraffin</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 200px; 
+    }
+
+    body {
+      background-color: black;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f0;
+    }
+
+    /* N A V B A R */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      text-align: center;
+      justify-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #000000;
+    }
+
+    .navbar a {
+      padding: 15px;
+      text-decoration: none;
+      color: #444444;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #111111;
+      color: #999999;
+    }
+
+    /* A B O U T */
+    #title {
+      font-size: 2em;
+      margin-top: 0px;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 200px; 
+			overflow: hidden;
+			white-space: nowrap; 
+			border-right: 2px solid; 
+			width: 0; 
+			animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0; 
+			}
+			to {
+				width: 100%; 
+			}
+		}
+
+		@keyframes blink-caret {
+			from, to {
+				border-color: transparent; 
+			}
+			50% {
+				border-color: black; 
+			}
+		}
+
+    #intro {
+      font-size: 1.4em;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    #university {
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    #university:hover {
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: flex;                
+      justify-content: center;      
+      align-items: center;            
+      height: 100px;
+      margin-bottom: 150px;                 
+    }
+
+    #resume-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: rgba(35, 42, 48, 0.6);
+      padding: 10px 20px;
+      border: 2px solid #343A40;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    #resume-link:hover {
+      text-decoration: underline;
+      color: greenyellow;
+      background-color: #232629;
+      color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    /* S K I L L S */
+    #skills {
+      margin: 50px 0;
+      padding: 100px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #skills h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #f0f0f0; 
+      font-size: 2rem;
+    }
+
+    .badge-container {
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center;
+      margin-bottom: 1.5rem; 
+    }
+
+    .badge-container img {
+      margin: 0.5rem; 
+      max-width: 120px; 
+      transition: transform 0.2s; 
+    }
+
+    .badge-container img:hover {
+      transform: scale(1.05); 
+    }
+
+    strong {
+      display: block; 
+      margin: 1rem 0 0.5rem; 
+      color: lightgray; 
+      font-weight: 600; 
+      text-align: center;
+    }
+
+    /* P O R T F O L I O */
+    #portfolio {
+      margin: 50px 0;
+      padding: 100px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #portfolio-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #f0f0f0; 
+      font-size: 2rem;
+    }
+
+    #portfolio-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .portfolio-card {
+      border-radius: 3px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      border: 2px solid #333333;
+      border-radius: 1px;
+    }
+
+    .portfolio-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-title a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f0f0;
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    
+    #portfolio p {
+      font-size: 0.9rem;
+      text-align: justify;
+    } 
+
+    .project-title a:hover {
+      color: greenyellow;
+      text-decoration: underline;
+      text-decoration-color: greenyellow;
+      text-decoration-thickness: 2px;
+    }
+
+    .portfolio-card p {
+      color: #d3d3d3;
+      margin: 15px 0;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .tech-stack span {
+      background-color: #111111;
+      color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.7rem;
+    }
+
+    .tech-stack span:hover {
+      background-color: #222222;
+      cursor: pointer;
+    }
+
+    /* C O N T A C T */
+    #contact {
+      margin: 50px 0;
+      padding: 100px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #contact-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #f0f0f0; 
+      font-size: 2rem;
+    }
+
+    #social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+			background-color: #000000;
+			padding: 20px;
+			max-width: 470px;
+      margin-left: auto;
+      margin-right: auto;
+			border: 1px solid #222222;
+      border-radius: 1px;
+    }
+
+    .social-link {
+      display: inline-block;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+
+    .social-link img {
+      display: block;
+    }
+
+    /* F O O T E R */
+    footer {
+      border: 1px solid #333333;
+      border-radius: 1px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #copyright {
+      font-size: 0.8rem;
+      color: #f0f0f0;
+      margin: 0;
+    }
+
+    /* E X T R A*/
+    .section-container {
+      position: relative;
+      height: 200px; 
+      width: 100%; 
+    }
+
+    .vertical-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #222222;
+      transform: translateX(-50%);
+    }    
+  </style>
+</head>
+
+<body>
+
+  <!-- N A V B A R -->
+   <nav>
+    <div class="navbar">
+      <a href="#title">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- I N T R O -->
+  <section id="about">
+    <h1 id="title">Hello there... I&#39;m Eidraffin</h1>
+    <p id="intro">
+      I&#39;m a third-year Computer Science student at <a href="https://www.bracu.ac.bd/" id="university"><i>Brac University</i></a>, driven to stay at the forefront of technology. My key interests lie in Operating Systems and Cybersecurity. Currently, my areas of focus in development include Backend Development and Machine Learning. I&#39;m proficient in programming languages such as Python, JavaScript, and C. Additionally, I enjoy applying my skills to web development projects using Next.js and Django whenever possible.        
+    </p>
+    <div class="button-container">
+      <a id="resume-link" href="https://drive.google.com/file/d/1EoaLXEDOaViMRXZdBMIPMJ6e9wcAVUZi/view?usp=sharing" target="_blank">View Resume</a>      
+    </div>
+  </section>
+
+  <div class="section-container"><div class="vertical-line"></div></div>
+  
+  <!-- S K I L L S -->
+  <section id="skills">
+    <h2>SKILLS</h2>
+    <div id="skills-item">
+        <strong>Technologies Worked With</strong>
+        <p class="badge-container">
+            <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=flat" />
+            <img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white&style=flat" />
+            <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white&style=flat" />
+            <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=flat" />
+            <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat" />
+            <img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=flat" />
+            <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white&style=flat" />
+            <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=flat" />
+            <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat" />
+            <img alt="Django" src="https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white&style=flat" />
+            <img alt="C" src="https://img.shields.io/badge/C-00599C?logo=c&logoColor=white&style=flat" />
+            <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white&style=flat" />
+            <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=flat" />
+            <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white&style=flat" />
+            <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat" />
+            <img alt="Prisma" src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white&style=flat" />
+            <img alt="Firebase" src="https://img.shields.io/badge/Firebase-F57C00?logo=firebase&logoColor=white&style=flat" />          
+        </p>
+
+        <strong>Version Control and Development Tools</strong>
+        <p class="badge-container">
+            <img alt="Git" src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=flat" />
+            <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=flat" />
+            <img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visual+studio+code&logoColor=white&style=flat" />
+            <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white&style=flat" />
+        </p>
+
+        <strong>Familiar Operating Systems</strong>
+        <p class="badge-container">
+            <img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white&style=flat" />
+            <img alt="Debian" src="https://img.shields.io/badge/Debian-A81D24?logo=debian&logoColor=white&style=flat" />
+            <img alt="Linux Mint" src="https://img.shields.io/badge/Linux%20Mint-87CF3F?logo=linuxmint&logoColor=white&style=flat" />
+            <img alt="Kali Linux" src="https://img.shields.io/badge/Kali%20Linux-557C94?logo=kali-linux&logoColor=white&style=flat" />
+            <img alt="Fedora" src="https://img.shields.io/badge/Fedora-294172?logo=fedora&logoColor=white&style=flat" />
+            <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white&style=flat" />
+        </p>
+    </div>
+  </section>
+
+  <div class="section-container"><div class="vertical-line"></div></div>
+
+  <!-- P O R T F O L I O -->
+  <section id="portfolio">
+    <h2 id="portfolio-title">PORTFOLIO</h2>
+    <div id="portfolio-container">
+      <div class="portfolio-card">
+
+        <div class="project-title">
+          <a href="https://github.com/eidraffin/pet-adoption-platform" target="_blank">Pet Adoption Platform</a>
+        </div>
+        <p>
+          This platform for pet adoption incorporates secure user authentication via Django Allauth, alongside browsing capabilities and advanced searching and filtering using ORM. It offers a responsive design with Tailwind CSS, detailed pet profiles, and a streamlined adoption process. Users can manage adoption requests, engage in real-time chat via WebSockets, and maintain personal profiles with a favorite list. The platform also includes pet management for admins and a reporting functionality for user safety.
+        </p>
+        <div class="tech-stack">
+          <span>Next.js</span>
+          <span>React</span>
+          <span>Tailwind CSS</span>
+          <span>TypeScript</span>
+          <span>Django</span>
+          <span>PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="project-title">
+          <a href="https://github.com/eidraffin/dunphy-estates" target="_blank">Dunphy Estates</a>
+        </div>
+        <p>
+          An interactive real estate listing platform that enables users to find and view properties, featuring advanced search options with customizable filters. It incorporates secure user authentication through OAuth with Firebase, ensuring a seamless login experience. Users can easily browse listings, utilize enhanced search capabilities, and access detailed property profiles.          
+        </p>
+        <div class="tech-stack">
+          <span>Next.js</span>
+          <span>React</span>
+          <span>Tailwind CSS</span>
+          <span>JavaScript</span>
+          <span>Firebase</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="project-title">
+          <a href="https://github.com/eidraffin/EcoSaviour-Implementing-an-integrated-agricultural-system" target="_blank">EcoSaviour: Implementing an integrated agricultural system</a>
+        </div>
+        <p>
+          Modern agriculture and landscaping have revolutionized plant care with innovative solutions with the help of IoT. This system Ecosaviour combines sensors, intelligent controllers, valves, detecting harm from substances and bugs, and various irrigation methods, revolutionizing the way we water gardens, lawns, and fields.
+        </p>
+        <div class="tech-stack">
+          <span>Next.js</span>
+          <span>Flask</span>
+          <span>C++</span>
+          <span>Arduino</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-container"><div class="vertical-line"></div></div>
+
+	<!-- C O N T A C T -->
+	<section id="contact">
+		<h1 id="contact-title">FIND ME</h1>
+		<div id="social-icons">
+				<a href="https://www.linkedin.com/in/eidraffin/" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" width="30" height="30"/>
+				</a>
+				<a href="https://www.github.com/eidraffin/" target="_blank" class="social-link">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="LinkedIn" width="30" height="30"/>
+				</a>	
+				<a href="https://x.com/eidraffin" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/X_logo.jpg" alt="X" width="30" height="30"/>
+				</a>
+				<a href="https://www.facebook.com/eidraffin/" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" width="30" height="30"/>
+				</a>
+				<a href="https://www.instagram.com/eidraffin" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" width="30" height="30"/>
+				</a>
+				<a href="https://www.reddit.com/user/eidraffin/" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Reddit_Logo_Icon.svg/1024px-Reddit_Logo_Icon.svg.png" alt="Reddit" width="30" height="30"/>
+				</a>
+				<a href="https://mastodon.social/@eidraffin" target="_blank" class="social-link">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Mastodon_Logotype_%28Simple%29.svg" alt="Mastodon" width="30" height="30"/>
+				</a>
+		</div>
+	</section>
+  
+    <footer>
+      <p id="copyright">© <span id="year"></span> eidraffin. All rights reserved.</p>
+    </footer>
+    
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById('year').textContent = year;
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>    
+</body>
+</html>
